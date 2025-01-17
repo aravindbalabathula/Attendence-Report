@@ -1,0 +1,78 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M15 2H9a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg> Attendance Tracker</h1>
+            <div class="header-buttons">
+                <button id="adminBtn" class="btn-secondary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-3a2 2 0 0 1-2-2V2"/><path d="M9 18a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h7l4 4v10a2 2 0 0 1-2 2Z"/><path d="M3 7v10a2 2 0 0 0 2 2h4"/><path d="m12 19 2 2 4-4"/></svg>
+                    Admin
+                </button>
+                <button id="generateReportBtn" class="btn-primary">Generate Report</button>
+            </div>
+        </header>
+
+        <div id="adminPanel" class="admin-panel hidden">
+            <h2>Admin Settings</h2>
+            <div class="settings-grid">
+                <div class="setting-group">
+                    <label>Class</label>
+                    <select id="classSelect">
+                        <option>ALPHA</option>
+                        <option>BETA</option>
+                        <option>GAMMA</option>
+                        <option>DELTA</option>
+                    </select>
+                </div>
+                <div class="setting-group">
+                    <label>Session</label>
+                    <select id="sessionSelect">
+                        <option>FORENOON</option>
+                        <option>AFTERNOON</option>
+                    </select>
+                </div>
+                <div class="setting-group">
+                    <label>Room Number</label>
+                    <select id="roomSelect"></select>
+                </div>
+            </div>
+        </div>
+
+        <div class="attendance-grid" id="attendanceGrid"></div>
+
+        <div id="reportPanel" class="report-panel hidden">
+            <h2>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                Attendance Report
+            </h2>
+            <div class="report-grid">
+                <p><strong>Date:</strong> <span id="currentDate"></span></p>
+                <p><strong>Class:</strong> <span id="reportClass"></span></p>
+                <p><strong>Room number:</strong> <span id="reportRoom"></span></p>
+                <p><strong>Session:</strong> <span id="reportSession"></span></p>
+                <p><strong>Total Strength:</strong> <span id="reportTotal"></span></p>
+                <p><strong>Total Present:</strong> <span id="reportPresent"></span></p>
+                <p class="full-width"><strong>Absentees:</strong> <span id="reportAbsentees"></span></p>
+            </div>
+            <div class="remarks-section">
+                <label for="remarks">Remarks if any:</label>
+                <textarea id="remarks" placeholder="Enter any additional remarks here..."></textarea>
+            </div>
+        </div>
+
+        <footer>
+            <p>Developed by: B. Aravind</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
